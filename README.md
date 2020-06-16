@@ -2,7 +2,6 @@ This is a music recommender that aims to reflect the user's thoughts and feeling
 
 ## Files
 Classes and functions used in these files can be viewed separately, in the *modules* folder.
-Saved objects can be found in the *pickled* folder.
 
 ### Topic Modeling
 gather_lyrics_data.py  
