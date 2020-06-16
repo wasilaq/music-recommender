@@ -5,23 +5,18 @@ Classes and functions used in these files can be viewed separately, in the *modu
 Saved objects can be found in the *pickled* folder.
 
 ### Topic Modeling
-gather_lyrics_data.py
-
+gather_lyrics_data.py. 
 topic_modeling.py
 
 ### Emotion Classification
-gather_emotion_data.py
-
+gather_emotion_data.py. 
 emotion_classification.py
 
 **Modeling**
 
-modeling_happy.py
-
-modeling_sad.py
-
-modeling_calm.py
-
+modeling_happy.py. 
+modeling_sad.py. 
+modeling_calm.py. 
 modeling_energetic.py
 
 **Application**
