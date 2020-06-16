@@ -1,10 +1,13 @@
 This is a music recommender that aims to reflect the user's thoughts and feelings. Unlike traditional music recommenders, it doesn't emphasize the audio features themselves.
 
-## Coding
+## Files
+Classes and functions used in these files can be viewed separately, in the *modules* folder.
+Saved objects can be found in the *pickled* folder.
+
 ### Topic Modeling
 gather_lyrics_data.py
 
-topic_modeling
+topic_modeling.py
 
 ### Emotion Classification
 gather_emotion_data.py
@@ -23,7 +26,7 @@ modeling_energetic.py
 
 **Application**
 
-emotion_classification_utlization
+emotion_classification_utlization.py
 
 ### Recommendor
 recommender.py
