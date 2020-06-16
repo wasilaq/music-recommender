@@ -9,17 +9,17 @@ gather_lyrics_data.py
 topic_modeling.py
 
 ### Emotion Classification
-gather_emotion_data.py
+gather_emotion_data.py  
+emotion_modeling_setup.py
 
-**Modeling**  
-emotion_modeling_setup.py  
+**Models**  
 modeling_happy.py  
 modeling_sad.py  
 modeling_calm.py  
 modeling_energetic.py
 
 **Application**  
-emotion_classification_utlization.py
+emotion_classification_utilization.py
 
 ### Recommendor
 recommender.py
