@@ -10,7 +10,9 @@ topic_modeling
 gather_emotion_data.py
 
 emotion_classification.py
+
 **Modeling**
+
 modeling_happy.py
 
 modeling_sad.py
@@ -18,7 +20,9 @@ modeling_sad.py
 modeling_calm.py
 
 modeling_energetic.py
+
 **Application**
+
 emotion_classification_utlization
 
 ### Recommendor
