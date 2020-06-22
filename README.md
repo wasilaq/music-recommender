@@ -8,7 +8,7 @@ gather_lyrics_data.py
 gather_emotion_data.py  
 
 ### Modeling
-topic_modeling.py
+topic_modeling.py  
 emotion_modeling_setup.py  
 *Models folder contains classification models*
 
