@@ -25,22 +25,73 @@ for word in lyrics_bow.columns:
 
 
 # NMF
-def NMF_vars(num_topics, dtm):
+def NMF_vars(num_topics, bow):
+    '''
+    Returns NMF objects.
+
+    Parameters
+    ----------
+    num_topics : int
+        Number of topics.
+    bow : DataFrame
+        Bag of words.
+
+    Returns
+    -------
+    model : NMF
+        NMF instance.
+    fitted : NMF
+        Fitted & transformed NMF model.
+
+    '''
     model = NMF(num_topics)
-    fitted = model.fit_transform(dtm)
+    fitted = model.fit_transform(bow)
     return model, fitted
 
-def topic_words(model, dtm, num_words=10):
+def topic_words(model, bow, num_words=10):
+    '''
+    Prints top words in each topic.
+
+    Parameters
+    ----------
+    model : NMF
+        NMF model.
+    bow : DataFrame
+        Bag of words.
+    num_words : int, optional
+        Number of words printed for each topic. The default is 10.
+
+    Returns
+    -------
+    None.
+
+    '''
     topic_words = model.components_.round(5)
     for ix, topic in enumerate(topic_words):
         print('Topic {}'.format(ix+1))
         word_list = []
         for i in topic.argsort()[::-1][:num_words]:
-            word = dtm.columns[i]
+            word = bow.columns[i]
             word_list.append(word)
         print(word_list)
         
 def topic_likelihood(fitted_model, topic_num):
+    '''
+    Return the value corresponding to each document for a given topic.
+
+    Parameters
+    ----------
+    fitted_model : NMF
+        Fitted & transformed NMF model.
+    topic_num : int
+        The topic being referred to.
+
+    Returns
+    -------
+    topic : list
+        The value given for each document, for a given topic. Values taken from fitted_model.
+
+    '''
     topic = []
     for doc in fitted_model:
         topic.append(doc[topic_num])
@@ -81,6 +132,7 @@ for num in range(2,6):
     topic_words(NMF_vars(num,nouns_bow_2)[0], nouns_bow_2)
 
 topic_words(NMF_vars(10,nouns_bow_2)[0], nouns_bow_2)
+
 # remove the word 'total'
 topic_words(NMF_vars(10,nouns_bow_2.drop('total',axis=1))[0], nouns_bow_2.drop('total',axis=1))
 
@@ -89,18 +141,46 @@ for num in range(12,16):
 # best # of topics: 13
 
 # LDA
-# mapping (dict) of row id to word (token)
-def generate_id2word(dtm):
+def generate_id2word(bow):
+    '''
+    Map row ID to token.
+
+    Parameters
+    ----------
+    bow : DataFrame
+        Bag of words.
+
+    Returns
+    -------
+    id2word : dict
+        Mapping of document to word.
+
+    '''
     id2word = {}
-    for row in dtm.index:
-        for word in dtm.columns:
-            if dtm[word].loc[row] > 0:
+    for row in bow.index:
+        for word in bow.columns:
+            if bow[word].loc[row] > 0:
                 id2word[row] = word
     return id2word
 
-def LDA_topics(num_topics, dtm):     
-    gensim_corpus = matutils.Sparse2Corpus(dtm.transpose()) # sparse2corpus doesn't work for dataframes
-    id2word = generate_id2word(dtm)
+def LDA_topics(num_topics, bow):
+    '''
+    Prints topics for LDA model.
+
+    Parameters
+    ----------
+    num_topics : int
+        Number of topics.
+    bow : DataFrame
+        Bag of words.
+
+    Returns
+    -------
+    None.
+
+    '''     
+    gensim_corpus = matutils.Sparse2Corpus(bow.transpose())
+    id2word = generate_id2word(bow)
     LDA_model = models.LdaModel(corpus=gensim_corpus, num_topics=num_topics, id2word=id2word, passes=5)
     
     return LDA_model.print_topics()

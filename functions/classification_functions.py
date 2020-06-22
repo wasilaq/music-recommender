@@ -31,8 +31,7 @@ def print_metrics(model, X, y, scoring='f1', oversample=False):
     fitted_model = model.fit(X, y)
     cm = confusion_matrix(y, fitted_model.predict(X))
     print(score)
-    print(cm) # confusion matrix to check if all values are classified in same class
-# create class w/ functions for printing??
+    print(cm)
     
 def logistic_reg(X, y, oversample=False, class_weight=None, C=1.0):
     model = LogisticRegression(class_weight=class_weight, C=C, random_state=11, max_iter=500)
