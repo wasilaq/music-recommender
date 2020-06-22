@@ -3,19 +3,14 @@ I wanted to build a music recommender that places less emphasis on audio feature
 ## File Overview
 Custom functions used in these files can be found in the *functions* folder.
 
-### Obtain Data
+### Obtaining Data
 gather_lyrics_data.py  
 gather_emotion_data.py  
 
 ### Modeling
 topic_modeling.py
 emotion_modeling_setup.py  
-***Models*** **Folder**  
-*Contains classification models*  
-modeling_happy.py  
-modeling_sad.py  
-modeling_calm.py  
-modeling_energetic.py
+*Models folder contains classification models*
 
 ### Modeling Application
 predict_emotions.py
