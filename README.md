@@ -1,5 +1,8 @@
 This is a music recommender that aims to reflect the user's thoughts and feelings. It's based on the content of songs and the emotions corresponding to songs and places less emphasis on the audio features so that users get more variety.
 
+## Overview
+Recommender integrated topic modeling (NLP) and classification.
+
 ## File Directory
 * **emotion_modeling_setup.py**: format datasets for modeling  
 * **functions/classification_functions**: contains functions used in modeling for classifiers  
