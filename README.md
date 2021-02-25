@@ -10,9 +10,9 @@ Recommender integrates topic modeling (NLP) and classification.
 * **gather_lyrics_data.py**: obtain song lyrics
 * **gather_emotion_data.py**: obtain & clean dataset with emotion tags, obtain audio data (to use as features in classifiers)  
 * **topic_modeling.py**: topic modeling on lyrics  
-* **models/modeling_calm.py**: classifier designating is a song is "calm"  
-* **models/modeling_energetic.py**: classifier designating is a song is "energetic"  
-* **models/modeling_happy.py**: classifier designating is a song is "happy"  
-* **models/modeling_sad.py**: classifier designating is a song is "sad"  
+* **models/modeling_calm.py**: classifier designating if a song is "calm"  
+* **models/modeling_energetic.py**: classifier designating if a song is "energetic"  
+* **models/modeling_happy.py**: classifier designating if a song is "happy"  
+* **models/modeling_sad.py**: classifier designating if a song is "sad"  
 * **predict_emotions.py**: apply classifiers to new data  
 * **recommender.py**: code for recommendation system  
